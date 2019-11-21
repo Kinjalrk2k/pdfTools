@@ -64,11 +64,20 @@ def rex_grouping(tokenized_exp, dirt=None):
 
 def metadata_parser(exp, dirt=None):
     metadata = []
-    tokens = str_tokenizer(exp)
-    # out_file = tokens.pop()
+    if exp == None:
+        for f in os.listdir(dirt):
+            if f.endswith('.pdf'):
+                if dirt == None:
+                    metadata.append([f, 0, None])
+                else:
+                    metadata.append([dirt+f, 0, None])
 
-    for t in tokens:
-        metadata.append(rex_grouping(t, dirt))
+    else:
+        tokens = str_tokenizer(exp)
+        # out_file = tokens.pop()
+
+        for t in tokens:
+            metadata.append(rex_grouping(t, dirt))
 
     return metadata
 
@@ -104,6 +113,7 @@ def extract_pages(info, op_file, bookmark=True):
 # main
 exp, dirt, bm, outfile = parse_cl_args()
 metadata = metadata_parser(exp, dirt)
+# print(metadata)
 extract_pages(metadata, outfile, bm)
 
 
