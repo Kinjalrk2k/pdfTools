@@ -11,8 +11,9 @@ def parse_cl_args():
     exp = None
     dirt = None
     bm = True
+    outfile = None
 
-    options, rem = getopt.getopt(sys.argv[1:], 'e:d:h', ['nb'])
+    options, rem = getopt.getopt(sys.argv[1:], 'e:d:o:h', ['nb'])
 
     for opt, arg in options:
         if opt == '-e':
@@ -21,10 +22,12 @@ def parse_cl_args():
             dirt = arg
         elif opt == '-h':
             print_help()
+        elif opt == '-o':
+            outfile = arg
         elif opt == '--nb':
             bm = False
 
-    return (exp, dirt, bm)
+    return (exp, dirt, bm, outfile)
 
 
 
@@ -62,12 +65,12 @@ def rex_grouping(tokenized_exp, dirt=None):
 def metadata_parser(exp, dirt=None):
     metadata = []
     tokens = str_tokenizer(exp)
-    out_file = tokens.pop()
+    # out_file = tokens.pop()
 
     for t in tokens:
         metadata.append(rex_grouping(t, dirt))
 
-    return metadata, out_file
+    return metadata
 
 
 
@@ -99,8 +102,8 @@ def extract_pages(info, op_file, bookmark=True):
 
 
 # main
-exp, dirt, bm = parse_cl_args()
-metadata, outfile = metadata_parser(exp, dirt)
+exp, dirt, bm, outfile = parse_cl_args()
+metadata = metadata_parser(exp, dirt)
 extract_pages(metadata, outfile, bm)
 
 
