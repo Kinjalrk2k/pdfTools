@@ -1,5 +1,6 @@
 import PyPDF2 as pdf
 import re
+import os
 
 def str_tokenizer(exp):
     li = re.split(r'\+|\=', exp)
@@ -40,8 +41,9 @@ def metadata_parser(exp):
 
 
 
-def extract_pages(info, op_file):
+def extract_pages(info, op_file, bookmark=True):
     writer = pdf.PdfFileWriter()
+    p = 0
     for ip_file in info:
         with open(ip_file[0], 'rb') as infile:
             reader = pdf.PdfFileReader(infile)
@@ -57,8 +59,12 @@ def extract_pages(info, op_file):
                 writer.addPage(reader.getPage(i))
                 # writer.insertPage(reader.getPage(1))
 
-                with open(op_file, 'wb') as outfile:
-                    writer.write(outfile)
+            if(bookmark):
+                writer.addBookmark(os.path.splitext(ip_file[0])[0], p)
+                p += (p_end - p_start)
+
+            with open(op_file, 'wb') as outfile:
+                writer.write(outfile)
 
 
 
