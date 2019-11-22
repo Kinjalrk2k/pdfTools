@@ -1,5 +1,9 @@
+[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
+
 # pdfTools
 A small CLI python script based on PyPDF2 for extracting, merging and doing a lot more on pdf files
+
+#### Released under Windows [![GitHub release](https://img.shields.io/github/release/Naereen/StrapDown.js.svg)](https://github.com/Kinjalrk2k/pdfTools/releases)
 
 ### Usage
 * Clone this repository
