@@ -11,6 +11,8 @@ A small CLI python script based on PyPDF2 for extracting, merging and doing a lo
 * Install dependencies: ````pip install -r requirements.txt````
 * Run the python script. Read more detials below!
 
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/Kinjalrk2k/pdfTools)
+
 ### Running the script
 Basic syntax:
 ````py pdftools.py -d <directory> -e "<expression>" -o <output file> --nb````
