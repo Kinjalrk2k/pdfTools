@@ -110,3 +110,6 @@ venv.bak/
 files/
 testing/
 *.pdf
+
+# build files and folders
+icon/
