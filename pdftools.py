@@ -27,6 +27,10 @@ def parse_cl_args():
         elif opt == '--nb':
             bm = False
 
+    if dirt != None:
+        dirt = dirt.replace('\\', '\\')
+        outfile = dirt + outfile
+
     return (exp, dirt, bm, outfile)
 
 
@@ -55,7 +59,7 @@ def rex_grouping(tokenized_exp, dirt=None):
         p_end = None
 
     if dirt != None:
-        dirt = dirt.replace('\\', '\\')
+    #     dirt = dirt.replace('\\', '\\')
         filename = dirt + filename
 
     return [filename, p_start, p_end]
@@ -113,7 +117,7 @@ def extract_pages(info, op_file, bookmark=True):
 # main
 exp, dirt, bm, outfile = parse_cl_args()
 metadata = metadata_parser(exp, dirt)
-# print(metadata)
+# print(metadata, outfile)
 extract_pages(metadata, outfile, bm)
 
 
