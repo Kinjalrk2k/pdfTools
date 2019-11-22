@@ -54,7 +54,8 @@ def str_tokenizer(exp):
 
 
 def rex_grouping(tokenized_exp, dirt=None):
-    rex = re.compile(r'(.*)(?:\[(\d+)?:(\d+)?\])')
+    # rex = re.compile(r'(.*)(?:\[(\d+)?:(\d+)?\])')
+    rex = re.compile(r'([^\[|\]|:]+)(?:\[(\d+)?:(\d+)?\])?')
     grps = rex.match(tokenized_exp)
 
     filename = grps.group(1)
