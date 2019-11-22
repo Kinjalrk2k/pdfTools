@@ -30,16 +30,17 @@ Following are the command line options and details on arguments:
 ### Writing the expression
 #### Page numbers start form 0 (zero-indexed)
 * Use exact filenames
-* Use ````[:]```` notation to extract files - Same as python slicing
+* followed by ````[:]```` notation to extract files - Same as python slicing
   * ````[x:y]```` will extract pages x to y-1
   * ````[:y]```` will extract pages 0 to y-1
   * ````[x:]```` will extract pages x to the end of the document
   * ````[:]```` will extract the whole document - in other words: no extraction, use the full document
-  *(Note: It is mandatory to use this when you want the whole document. Skipping this would lead to uncaught exceptions)*
+  ~*(Note: It is mandatory to use this when you want the whole document. Skipping this would lead to uncaught exceptions)*~
+  * just the filename will also extract the whole document
 * Use ````+```` to merge files
 
-Example: ````"abc.pdf[1:3] + def.pdf[:10] + ghi.pdf[7:] + jkl.pdf[:]"````
-
+~Example: ````"abc.pdf[1:3] + def.pdf[:10] + ghi.pdf[7:] + jkl.pdf[:]"````~
+Example: ````"abc.pdf[1:3] + def.pdf[:10] + ghi.pdf[7:] + jkl.pdf"````
 ### Dependencies
 [Click here](https://github.com/Kinjalrk2k/pdfTools/network/dependencies) to explore the dependency graph.
 
