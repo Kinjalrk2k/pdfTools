@@ -108,7 +108,7 @@ venv.bak/
 
 # test files
 files/
-testing/
+learning/
 *.pdf
 
 # build files and folders
