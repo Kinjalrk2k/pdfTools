@@ -3,7 +3,7 @@
 # pdfTools
 A small CLI python script based on PyPDF2 for extracting, merging and doing a lot more on pdf files
 
-#### Released under Windows [![GitHub release](https://img.shields.io/github/release/Naereen/StrapDown.js.svg)](https://github.com/Kinjalrk2k/pdfTools/releases)
+#### Released under [Windows](https://github.com/Kinjalrk2k/pdfTools/releases)
 
 ### Usage
 * Clone this repository
