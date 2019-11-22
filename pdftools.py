@@ -3,9 +3,19 @@ import re
 import os
 import sys
 import getopt
+import webbrowser
 
 def print_help():
-    print('HELP')   # TODO
+    print('<HELP>')   # TODO
+    print('Please follow the README.md at https://github.com/Kinjalrk2k/pdfTools/blob/master/README.md, for more details')
+    print("\nBasic syntax: py pdftools.py -d <directory> -e \"<expression>\" -o <output file> --nb")
+    print("-d followed by working directory path")
+    print("-e followd by expression to work on in \"\"")
+    print("-o followed by output file name")
+    print("--nb for no bookmarking at merge ends")
+    print("-h to open this help promt\n")
+    webbrowser.open("https://github.com/Kinjalrk2k/pdfTools/blob/master/README.md")
+
 
 def parse_cl_args():
     exp = None
@@ -22,6 +32,7 @@ def parse_cl_args():
             dirt = arg
         elif opt == '-h':
             print_help()
+            sys.exit("You prompted the help! Program exited!")
         elif opt == '-o':
             outfile = arg
         elif opt == '--nb':
