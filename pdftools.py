@@ -11,7 +11,7 @@ def parse_cl_args():
     exp = None
     dirt = None
     bm = True
-    outfile = None
+    outfile = "output.pdf"
 
     options, rem = getopt.getopt(sys.argv[1:], 'e:d:o:h', ['nb'])
 
