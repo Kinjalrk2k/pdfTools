@@ -40,6 +40,7 @@ Following are the command line options and details on arguments:
 * Use ````+```` to merge files
 
 ~Example: ````"abc.pdf[1:3] + def.pdf[:10] + ghi.pdf[7:] + jkl.pdf[:]"````~
+
 Example: ````"abc.pdf[1:3] + def.pdf[:10] + ghi.pdf[7:] + jkl.pdf"````
 ### Dependencies
 [Click here](https://github.com/Kinjalrk2k/pdfTools/network/dependencies) to explore the dependency graph.
