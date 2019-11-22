@@ -1,11 +1,17 @@
+[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
+
 # pdfTools
 A small CLI python script based on PyPDF2 for extracting, merging and doing a lot more on pdf files
+
+#### Released under [Windows](https://github.com/Kinjalrk2k/pdfTools/releases)
 
 ### Usage
 * Clone this repository
 * Browse the cloned location
 * Install dependencies: ````pip install -r requirements.txt````
 * Run the python script. Read more detials below!
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/Kinjalrk2k/pdfTools)
 
 ### Running the script
 Basic syntax:
