@@ -4,6 +4,7 @@ import os
 import sys
 import getopt
 import webbrowser
+from natsort import natsorted
 
 def print_help():
     print('<HELP>')   # TODO
@@ -81,7 +82,7 @@ def rex_grouping(tokenized_exp, dirt=None):
 def metadata_parser(exp, dirt=None):
     metadata = []
     if exp == None:
-        for f in os.listdir(dirt):
+        for f in natsorted(os.listdir(dirt)):
             if f.endswith('.pdf'):
                 if dirt == None:
                     metadata.append([f, 0, None])
