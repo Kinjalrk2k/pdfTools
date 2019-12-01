@@ -48,6 +48,7 @@ Example: ````"abc.pdf[1:3] + def.pdf[:10] + ghi.pdf[7:] + jkl.pdf"````
 | Dependency | Version |
 |------------|---------|
 | ```PyPDF2```       | 1.26.0   |
+|````natsort````| 6.2.0 |
 
 ### Notes
 This project was created and tested under Windows, and is expected to work fully in other systems too.
